@@ -243,7 +243,7 @@ button {
 
 header {
      height: 105px;
-     background: #8b1310;
+     background: #fd9f2c;
      width: 100%;
      padding: 33px 30px;
 }
@@ -376,7 +376,7 @@ ul.email li img {
 }
 
 .bg_white {
-     background: #fffffff0;
+     background: #000000f0;
      padding: 45px 20px 50px 20px;
 }
 
@@ -680,7 +680,7 @@ ul.email li img {
 /** instant **/
 
 .instant {
-     background: #fd990c;
+     background: #fd9f2c;
      position: relative;
 }
 
@@ -756,14 +756,14 @@ ul.email li img {
 /** footer **/
 
 .footer {
-     background: #540705;
+     background: #cbfd72;
      padding-top: 362px
 }
 
 ul.social_icon {
      padding-top: 30px;
      padding-bottom: 33px;
-     border-bottom: #814948 solid 1px;
+     border-bottom: #fbed14 solid 1px;
      margin-bottom: 54px;
 }
 
@@ -778,7 +778,7 @@ ul.social_icon li:last-child {
 
 ul.social_icon li a {
      background: #fff;
-     color: #540705;
+     color: #13fd3a;
      width: 50px;
      height: 50px;
      display: inline-block;
