@@ -1,0 +1,105 @@
+<html>
+<title>W3.CSS Template</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Roboto'>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+<style>
+html,body,h1,h2,h3,h4,h5,h6 {font-family: "Roboto", sans-serif}
+</style>
+<body class="w3-light-grey">
+
+<!-- Page Container -->
+<div class="w3-content w3-margin-top" style="max-width:1400px;">
+
+  <!-- The Grid -->
+  <div class="w3-row-padding">
+  
+    <!-- Left Column -->
+    <div class="w3-third">
+    
+        <div class="w3-white w3-text-grey w3-card-4">
+            <div class="w3-display-container">
+              <img src="/w3images/avatar_hat.jpg" style="width:100%" alt="Avatar">
+              <div class="w3-display-bottomleft w3-container w3-text-black">
+                <h2>Institution Logo</h2>
+              </div>
+            </div>
+        <div class="w3-container">
+          
+        </div>
+      </div><br>
+
+    <!-- End Left Column -->
+    </div>
+
+    <!-- Right Column -->
+    <div class="w3-twothird">
+    
+      <div class="w3-container w3-card w3-white w3-margin-bottom">
+        <h2 class="w3-text-grey w3-padding-16"><i class='fa fa-institution' style="font-size: 50px;"></i>Institution Information</h2>
+        <div class="w3-container">
+          <h5 class="w3-opacity"><b>Institution Name:</b></h5>
+          <span id="institution-name"></span>
+          <h5 class="w3-opacity"><b>Institution URL:</b></h5>
+          <span id="institution-url"></span>
+          <h5 class="w3-opacity"><b>Email:</b></h5>
+          <span id="institution-email"></span>
+          <h5 class="w3-opacity"><b>Phone Number:</b></h5>
+          <span id="phone-number"></span>
+
+
+          <hr>
+        </div>
+        <div class="w3-container">
+            <h2 class="w3-text-grey w3-padding-16"><i class='fas fa-map-marker-alt' style="font-size: 50px;"></i>Location</h2>
+          <h5 class="w3-opacity"><b>Institution Address:</b></h5>
+          <span id="institution-address"></span>
+          <h5 class="w3-opacity"><b>City:</b></h5>
+          <span id="institution-city"></span>
+          <h5 class="w3-opacity"><b>Country:</b></h5>
+          <span id="institution-country"></span>
+          <hr>
+        </div>
+        
+      </div>
+
+      
+
+    <!-- End Right Column -->
+    </div>
+    
+  <!-- End Grid -->
+  </div>
+  
+  <!-- End Page Container -->
+</div>
+<script>
+    const institutionName = localStorage.getItem('institution-name');
+    const institutionUrl = localStorage.getItem('institution-url');
+    const institutionEmail = localStorage.getItem('institution-email');
+    const phoneNumber = localStorage.getItem('phone-number');
+    const address = localStorage.getItem('institution-address');
+    const city = localStorage.getItem('institution-city');
+    const country = localStorage.getItem('institution-country');
+
+    document.getElementById('institution-name').textContent = institutionName;
+    document.getElementById('institution-url').textContent = institutionUrl;
+    document.getElementById('institution-email').textContent = institutionEmail;
+    document.getElementById('phone-number').textContent = phoneNumber;
+    document.getElementById('institution-address').textContent = address;
+    document.getElementById('institution-city').textContent = city;
+    document.getElementById('institution-country').textContent = country;
+
+
+
+
+</script>
+
+
+
+
+</body>
+</html>

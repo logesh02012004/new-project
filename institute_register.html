@@ -13,7 +13,7 @@
     <body>
       <div class="row">
     <div class="col-md-12">
-      <form action="index.html" method="post">
+      <form action="index.html" method="post" id="form">
         
         <i class='fa fa-institution' style="font-size: 60px;"></i>
         
@@ -37,13 +37,13 @@
           <input type="email" id="institutionemail" name="user_institutionemail">
        
           <label for="phonenumber">Phone Number:</label>
-          <input type="number" id="phonenumber"       name="user_phonenumber">
+          <input type="tel" id="phonenumber"     maxlength="10"  name="user_phonenumber">
 
           <label for="branch">Your Branch</label>
           <input type="text" id="branch" name="user_branch">
 
           <label for="image">Upload Institute Logo:</label>
-          <input type="file" id="img" name="img" accept="image/*">
+          <input type="file" id="logo" name="img" accept="image/*">
           <p>Upload the logo of your institution here</p>
 
 
@@ -81,11 +81,62 @@
           
          </fieldset>
        
-        <button type="submit">Sign Up</button>
+        <button type="submit">Register</button>
         
        </form>
         </div>
       </div>
+      <script>
+        const form = document.getElementById('form');
+        const institutionName = document.getElementById('institutionname');
+        const institutionUrl = document.getElementById('institutionurl');
+        const institutionEmail = document.getElementById('institutionemail');
+        const phoneNumber = document.getElementById('phonenumber');
+        const logo = document.getElementById('logo');
+        const address = document.getElementById('address');
+        const city = document.getElementById('city');
+        const country = document.getElementById('country');
+
+        form.addEventListener('submit', function(e){
+
+          e.preventDefault();
+
+          const nameValue = institutionName.value;
+          const urlValue = institutionUrl.value;
+          const emailValue = institutionEmail.value;
+          const phonenumberValue = phoneNumber.value;
+          const addressValue = address.value;
+          const cityValue = city.value;
+          const countryValue = country.value;
+
+          localStorage.setItem('institution-name',nameValue);
+          localStorage.setItem('institution-url',urlValue);
+          localStorage.setItem('institution-email',emailValue);
+          localStorage.setItem('phone-number',phonenumberValue);
+          localStorage.setItem('institution-address',addressValue);
+          localStorage.setItem('institution-city',cityValue);
+          localStorage.setItem('institution-country',countryValue);
+
+          window.location.href = "preview.html";
+        })
+
+        logo.addEventListener('change', () => {
+
+          const fr = new FileReader();
+
+          fr.readAsDataURL(logo.files[0]);
+          fr.addEventListener('load',() => {
+
+            const url = fr.result;
+            
+            localStorage.setItem('institution-logo',url);
+          })
+
+        })
+
+
+
+      </script>
       
     </body>
 
