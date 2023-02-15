@@ -251,6 +251,9 @@ header {
 
 /** menu section **/
 
+ul.img{
+     margin: 500px;;
+}
 ul.email {
      padding-top: 4px;
      display: flex;

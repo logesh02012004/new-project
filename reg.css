@@ -20,6 +20,9 @@
     text-align: center;
     font-size: 40;
   }
+  h3{
+    text-align: end;
+  }  
   i{
     position: relative;left: 190;top: 20;
     color: #fb9f2c;
