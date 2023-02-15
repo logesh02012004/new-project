@@ -288,7 +288,7 @@ ul.email li i {
 }
 
 ul.email li a:hover {
-     color: #fe9a0c;
+     color: #000000;
 }
 
 ul.email li img {
@@ -552,12 +552,12 @@ ul.email li img {
 /** services **/
 
 .services_main {
-     padding-top: 90px;
+     padding-top: 0px;
      background: url(../images/service_bg.jpg);
      background-size: 100% 100%;
      background-position: center center;
      background-repeat: no-repeat;
-     padding-bottom: 350px;
+     /* padding-bottom: 350px; */
 }
 
 .services_main .titlepage {
@@ -760,7 +760,7 @@ ul.email li img {
 
 .footer {
      background: #cbfd72;
-     padding-top: 362px
+     padding-top: 42px
 }
 
 ul.social_icon {
