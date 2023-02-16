@@ -7,7 +7,25 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 <style>
-html,body,h1,h2,h3,h4,h5,h6 {font-family: "Roboto", sans-serif}
+html,body,h1,h3,h4,h5,h6 {font-family: "Roboto", sans-serif}
+#information,#location {
+  font-family: "Roboto",sans-serif;
+  color: black;
+  font-weight: bold;
+}
+
+#institution-logo{
+  width: 300px;
+  height: 250px;
+  border: 1px solid black;
+  background-position: center;
+  background-size: cover;
+}
+span {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-weight: bold;
+  font-size: 18;
+}
 </style>
 <body class="w3-light-grey">
 
@@ -22,7 +40,12 @@ html,body,h1,h2,h3,h4,h5,h6 {font-family: "Roboto", sans-serif}
     
         <div class="w3-white w3-text-grey w3-card-4">
             <div class="w3-display-container">
-              <img src="/w3images/avatar_hat.jpg" style="width:100%" alt="Avatar">
+              <div id="institution-logo">
+                
+                
+
+
+              </div>
               <div class="w3-display-bottomleft w3-container w3-text-black">
                 <h2>Institution Logo</h2>
               </div>
@@ -36,30 +59,29 @@ html,body,h1,h2,h3,h4,h5,h6 {font-family: "Roboto", sans-serif}
     </div>
 
     <!-- Right Column -->
-    <div class="w3-twothird">
-    
-      <div class="w3-container w3-card w3-white w3-margin-bottom">
-        <h2 class="w3-text-grey w3-padding-16"><i class='fa fa-institution' style="font-size: 50px;"></i>Institution Information</h2>
+    <div class="w3-twothird" style="background-color: rgb(149, 169, 169);">
+      <div class="w3-display-container" style="background-color: rgb(149, 169, 169);">
+        <h2 id="information"><i class='fa fa-institution' style="font-size: 50px;"></i>Institution Information</h2>
         <div class="w3-container">
-          <h5 class="w3-opacity"><b>Institution Name:</b></h5>
+          <h4 class="w3-opacity"><b>Institution Name:</b></h4>
           <span id="institution-name"></span>
-          <h5 class="w3-opacity"><b>Institution URL:</b></h5>
+          <h4 class="w3-opacity"><b>Institution URL:</b></h4>
           <span id="institution-url"></span>
-          <h5 class="w3-opacity"><b>Email:</b></h5>
+          <h4 class="w3-opacity"><b>Email:</b></h4>
           <span id="institution-email"></span>
-          <h5 class="w3-opacity"><b>Phone Number:</b></h5>
+          <h4 class="w3-opacity"><b>Phone Number:</b></h4>
           <span id="phone-number"></span>
 
 
           <hr>
         </div>
         <div class="w3-container">
-            <h2 class="w3-text-grey w3-padding-16"><i class='fas fa-map-marker-alt' style="font-size: 50px;"></i>Location</h2>
-          <h5 class="w3-opacity"><b>Institution Address:</b></h5>
+            <h2 id="location"><i class='fas fa-map-marker-alt' style="font-size: 50px;"></i>Location</h2>
+          <h4 class="w3-opacity"><b>Institution Address:</b></h4>
           <span id="institution-address"></span>
-          <h5 class="w3-opacity"><b>City:</b></h5>
+          <h4 class="w3-opacity"><b>City:</b></h4>
           <span id="institution-city"></span>
-          <h5 class="w3-opacity"><b>Country:</b></h5>
+          <h4 class="w3-opacity"><b>Country:</b></h4>
           <span id="institution-country"></span>
           <hr>
         </div>
@@ -92,6 +114,24 @@ html,body,h1,h2,h3,h4,h5,h6 {font-family: "Roboto", sans-serif}
     document.getElementById('institution-address').textContent = address;
     document.getElementById('institution-city').textContent = city;
     document.getElementById('institution-country').textContent = country;
+
+    const url = localStorage.getItem('institution-logo');
+    const logo = new Image();
+    logo.src = url;
+    var image = document.getElementById('institution-logo');
+
+
+    
+
+    logo.addEventListener("change",function(){
+      const reader = new FileReader();
+      reader.addEventListener("load",()=>{
+        logo = reader.result;
+        document.querySelector("#institution-logo").style.backgroundImage = logo;
+      })
+    })
+    
+    
 
 
 
