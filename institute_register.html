@@ -117,23 +117,10 @@
           localStorage.setItem('institution-city',cityValue);
           localStorage.setItem('institution-country',countryValue);
 
-          window.location.href = "preview.html";
+          window.location.href = "";
         })
 
-        logo.addEventListener('change', () => {
-
-          const fr = new FileReader();
-
-          fr.readAsDataURL(logo.files[0]);
-          fr.addEventListener('load',() => {
-
-            const url = fr.result;
-            
-            localStorage.setItem('institution-logo',url);
-          })
-
-        })
-
+        
 
 
       </script>
