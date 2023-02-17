@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Design by foolishdeveloper.com -->
+    <title>register  </title>
+ 
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;600&display=swap" rel="stylesheet">
+    <!--Stylesheet-->
+    <style media="screen">
+      *,
+*:before,
+*:after{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+body{
+    background-color: #ffffff;
+    padding: 10px;
+}
+.background{
+    width: 430px;
+    height: 520px;
+    position: absolute;
+    transform: translate(-50%,-50%);
+    left: 50%;
+    top: 50%;
+}
+.background .shape{
+    height: 200px;
+    width: 200px;
+    position: absolute;
+    border-radius: 50%;
+}
+.shape:first-child{
+    background: linear-gradient(
+        to right,
+        #ff512f,
+        #f09819
+    );
+    left: -260px;
+    top: -105px;
+}
+.shape:last-child{
+    background: linear-gradient(
+        #fbed14,
+        #cbfd72
+    );
+    right: -260px;
+    bottom: -580px;
+}
+form{
+    margin-top: 240px ;
+    margin-bottom: 180px;
+    height: 1025px;
+    width: 780px;
+    background-color: rgba(251, 128, 6, 0.13);
+    position: absolute;
+    transform: translate(-50%,-50%);
+    top: 50%;
+    left: 50%;
+    border-radius: 20px;
+    backdrop-filter: blur(10px);
+    border: 2px solid rgba(255,255,255,0.1);
+    box-shadow: 0 0 40px rgba(8,7,16,0.6);
+    padding: 20px 90px;
+}
+form *{
+    font-family: 'Poppins',sans-serif;
+    color: #037509ea;
+    letter-spacing: 0.5px;
+    outline: none;
+    border: none;
+}
+form h3{
+    color: #080710;
+    font-size: 32px;
+    font-weight: 500;
+    line-height: 42px;
+    text-align: center;
+    margin-top: 25px;
+}
+
+label{
+    display: block;
+    margin-top: 30px;
+    font-size: 16px;
+    font-weight: 5000;
+}
+input{
+    
+    display: block;
+    height: 50px;
+    width: 100%;
+    background-color: #ff000012;
+    border-radius: 3px;
+    padding: 0 10px;
+    margin-top: 8px;
+    font-size: 14px;
+    font-weight: 300;
+}
+::placeholder{
+   color: #080710;
+}
+button{
+    margin-left: 25px;
+    margin-top: 50px;
+    width: 90%;
+    background-color: #0b65ffc3;
+    color: #080710;
+    padding: 10px 0;
+    font-size: 18px;
+    font-weight: 600;
+    border-radius: 5px;
+    cursor: pointer;
+    align-items: center;
+}
+    </style>
+</head>
+<body>
+    <div class="background">
+        <div class="shape"></div>
+        <div class="shape"></div>
+    </div>
+    <form style="margin-bottom: -10%;">
+        <li><a href="institute_register.html" style="margin-left: 340px;font-size: x-large;color: blue;">Institution register</a></li>
+
+        <h3>Register Here</h3>
+    
+
+        <label for="fname">Full name</label>
+        <input type="text" placeholder="Name" id="fname">
+
+        <label for="username">Username</label>
+        <input type="text" placeholder="username" id="Username">
+
+        <label for="Email">Email ID</label>
+        <input type="email" placeholder="Email address" id="email">
+        
+        <label for="contact">Contact</label>
+        <input type="tel" placeholder="Mobile number" id="contact" minlength="10" maxlength="10">
+
+        <label for="password">Password</label>
+        <input type="password" placeholder="Password" id="password">
+
+        <label for="password">comform password</label>
+        <input type="password" placeholder="Re-enter Password" id="c_password">
+
+        <label for="date=of_birth">DOB</label>
+        <input type="date"  id="dob">
+
+        
+      
+        <button>SignUp</button>
+    </form>
+</body>
+</html>
