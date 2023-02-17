@@ -14,17 +14,23 @@ html,body,h1,h3,h4,h5,h6 {font-family: "Roboto", sans-serif}
   font-weight: bold;
 }
 
-#institution-logo{
+#imgBox{
   width: 300px;
   height: 250px;
   border: 1px solid black;
   background-position: center;
   background-size: cover;
+  padding-bottom: 100;
 }
 span {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   font-weight: bold;
   font-size: 18;
+}
+#upload {
+
+ font-size: larger;
+ border: 1px solid black;
 }
 </style>
 <body class="w3-light-grey">
@@ -38,18 +44,9 @@ span {
     <!-- Left Column -->
     <div class="w3-third">
     
-        <div class="w3-white w3-text-grey w3-card-4">
-            <div class="w3-display-container">
-              <div id="institution-logo">
-                
-                
-
-
-              </div>
-              <div class="w3-display-bottomleft w3-container w3-text-black">
-                <h2>Institution Logo</h2>
-              </div>
-            </div>
+        <div class="w3-white w3-text-grey w3-card-4" id="imgBox">
+            <input type="file" accept="image/*" id="file" style="display: none;" onchange="loadFile(event)">
+            <label for="file" id="upload">Upload</label>
         <div class="w3-container">
           
         </div>
@@ -113,23 +110,22 @@ span {
     document.getElementById('phone-number').textContent = phoneNumber;
     document.getElementById('institution-address').textContent = address;
     document.getElementById('institution-city').textContent = city;
-    document.getElementById('institution-country').textContent = country;
+    document.getElementById('institution-country').innerHTML = country;
+
+    var imgBox = document.getElementById("imgBox");
+    var loadFile = function(event){
+      imgBox.style.backgroundImage = "url(" +URL.createObjectURL(event.target.files[0])+ ")"
+    }
 
     const url = localStorage.getItem('institution-logo');
     const logo = new Image();
     logo.src = url;
-    var image = document.getElementById('institution-logo');
+
+    
 
 
     
 
-    logo.addEventListener("change",function(){
-      const reader = new FileReader();
-      reader.addEventListener("load",()=>{
-        logo = reader.result;
-        document.querySelector("#institution-logo").style.backgroundImage = logo;
-      })
-    })
     
     
 
