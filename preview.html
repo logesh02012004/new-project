@@ -7,11 +7,18 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 <style>
-html,body,h1,h3,h4,h5,h6 {font-family: "Roboto", sans-serif}
+html,body,h1,h3,h4,h5,h6 {font-family: 'Poppins', sans-serif}
 #information,#location {
   font-family: "Roboto",sans-serif;
   color: black;
   font-weight: bold;
+  text-align: center;
+}
+h3 {
+  color: #037509ea;
+}
+h1{
+  letter-spacing: 0.5px;
 }
 
 #institution-logo {
@@ -23,9 +30,11 @@ html,body,h1,h3,h4,h5,h6 {font-family: "Roboto", sans-serif}
   padding-bottom: 100;
 }
 span {
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-family: 'Poppins', sans-serif;
   font-weight: bold;
-  font-size: 18;
+  font-size: 21;
+  color: dimgrey;
+  letter-spacing: 0.5px;
 }
 #upload {
 
@@ -42,8 +51,56 @@ span {
   font-weight: bold;
 
 }
+form{
+
+
+  border-radius: 10px;
+  backdrop-filter: blur(10px);
+  border: 2px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 0 40px rgba(8, 7, 16, 0.6);
+  
+  background: none;
+  
+}
+.background{
+    width: 430px;
+    height: 520px;
+    position: absolute;
+    transform: translate(-50%,-50%);
+    left: 50%;
+    top: 50%;
+}
+.background .shape{
+    height: 200px;
+    width: 200px;
+    position: absolute;
+    border-radius: 50%;
+}
+.shape:first-child{
+    background: linear-gradient(
+        to right,
+        #ff512f,
+        #f09819
+    );
+    left: -105px;
+    top: -170px;
+}
+.shape:last-child{
+    background: linear-gradient(
+        #fbed14,
+        #cbfd72
+    );
+    right: -560px;
+    bottom: -300px;
+}
+
+
 </style>
-<body class="w3-light-grey">
+<body>
+  <div class="background">
+    <div class="shape"></div>
+    <div class="shape"></div>
+  </div>
 
 <!-- Page Container -->
 <div class="w3-content w3-margin-top" style="max-width:1400px;">
@@ -69,39 +126,39 @@ span {
     </div>
 
     <!-- Right Column -->
-    <div class="w3-twothird" style="background-color: rgb(149, 169, 169);">
-      <div class="w3-display-container" style="background-color: rgb(149, 169, 169);">
-        <h2 id="information"><i class='fa fa-institution' style="font-size: 50px;"></i>Institution Information</h2>
-        <div class="w3-container">
-          <h4 class="w3-opacity"><b>Institution Name:</b></h4>
-          <span id="institution-name"></span>
-          <h4 class="w3-opacity"><b>Institution URL:</b></h4>
-          <span id="institution-url"></span>
-          <h4 class="w3-opacity"><b>Email:</b></h4>
-          <span id="institution-email"></span>
-          <h4 class="w3-opacity"><b>Phone Number:</b></h4>
-          <span id="phone-number"></span>
-
-
-          <hr>
-        </div>
-        <div class="w3-container">
-            <h2 id="location"><i class='fas fa-map-marker-alt' style="font-size: 50px;"></i>Location</h2>
-          <h4 class="w3-opacity"><b>Institution Address:</b></h4>
-          <span id="institution-address"></span>
-          <h4 class="w3-opacity"><b>City:</b></h4>
-          <span id="institution-city"></span>
-          <h4 class="w3-opacity"><b>Country:</b></h4>
-          <span id="institution-country"></span>
-          <hr>
-        </div>
+    <form id="regmain" class="w3-twothird">
+      
+        <h1 id="information">Institution Information</h1>
         
-      </div>
+        <h3 class="w3-opacity"><b>Institution Name:</b></h3>
+        <span id="institution-name"></span>
+        <h3 class="w3-opacity"><b>Institution URL:</b></h3>
+        <span id="institution-url"></span>
+        <h3 class="w3-opacity"><b>Email:</b></h3>
+        <span id="institution-email"></span>
+        <h3 class="w3-opacity"><b>Phone Number:</b></h3>
+        <span id="phone-number"></span>
+
+
+        <hr>
+        
+        
+        <h1 id="location">Location</h1>
+        <h3 class="w3-opacity"><b>Institution Address:</b></h3>
+        <span id="institution-address"></span>
+        <h3 class="w3-opacity"><b>City:</b></h3>
+        <span id="institution-city"></span>
+        <h3 class="w3-opacity"><b>Country:</b></h3>
+        <span id="institution-country"></span>
+        <hr>
+        
+        
+      
 
       
 
     <!-- End Right Column -->
-    </div>
+      </form>
     
   <!-- End Grid -->
   </div>

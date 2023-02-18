@@ -8,51 +8,68 @@
     <title>Institute LogIn</title>
 
     <style>
-        html{
-            background-color: rgb(102, 102, 220);
+        html {
+            background-color: rgb(255, 255, 255);
         }
+
         /* Style the form */
         #regForm {
             align-items: center;
-            background-color: #ffffff;
+            background-color: rgb(255, 255, 255, 0.13);
             margin: 100px auto;
             padding: 40px;
             width: 60%;
             height: 400px;
-            border-radius: 2%;
+            border-radius: 10px;
+            backdrop-filter: blur(10px);
+            border: 2px solid rgba(255, 255, 255, 0.1);
+            box-shadow: 0 0 40px rgba(8, 7, 16, 0.6);
         }
-        h1{
+
+        h1 {
             padding-bottom: 25px;
+            font-family: 'Poppins', sans-serif;
+            letter-spacing: 0.5px;
         }
-        #institutionname,#phonenumber,#country{
+
+        #institutionname,
+        #phonenumber,
+        #country {
             width: 40%;
             padding: 10px;
             margin: 10px;
             font-size: 17px;
-            font-family: Raleway;
+            font-family: 'Poppins', sans-serif;
             border: 1px solid #aaaaaa;
             float: left;
+            letter-spacing: 0.5px;
         }
-        #institutionurl,#institutionemail,#city{
+
+        #institutionurl,
+        #institutionemail,
+        #city {
             width: 40%;
             padding: 10px;
             margin: 10px;
             font-size: 17px;
-            font-family: Raleway;
+            font-family: 'Poppins', sans-serif;
             border: 1px solid #aaaaaa;
             float: left;
+            letter-spacing: 0.5px;
         }
-        button{
+
+        button {
             width: 100px;
             height: 45px;
-            background-color: rgb(13, 97, 161);
-            color: #ffffff;
-            font-weight: bold;
-            border: 1px solid black;
+            background-color: #0b65ffc3;
+            color: #080710;
+            font-size: 18px;
+            font-weight: 600;
+            border-radius: 5px;
+            border-color: #0b65ffc3;
+            cursor: pointer;
         }
-        button:hover{
-            background-color: #04AA6D;
-        }
+
         /* Style the input fields */
         input {
             padding: 10px;
@@ -67,35 +84,38 @@
         input.invalid {
             background-color: #ffdddd;
         }
+
         small {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        margin-top: 2px;
-        height: 30px;
-        width: 30px;
-        background-color: #ccc;
-        border-radius: 50%;
-        color: yellow;
-        font-size: 19px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-top: 2px;
+            height: 30px;
+            width: 30px;
+            background-color: #ccc;
+            border-radius: 50%;
+            color: yellow;
+            font-size: 19px;
         }
+
         .user_card {
-        margin-top: 20px;
-        margin-bottom: 40px;
-        height: 180px;
-        width: 100%;
-        border: 1px solid #c7d3d9;
-        border-radius: 10px;
-        display: flex;
-        overflow: hidden;
-        position: relative;
-        box-sizing: border-box;
+            margin-top: 20px;
+            margin-bottom: 40px;
+            height: 180px;
+            width: 100%;
+            border: 1px solid #c7d3d9;
+            border-radius: 10px;
+            display: flex;
+            overflow: hidden;
+            position: relative;
+            box-sizing: border-box;
         }
+
         .user_card span {
-        height: 80px;
-        width: 100%;
-        background-color: #dfeeff;
-    }
+            height: 80px;
+            width: 100%;
+            background-color: #dfeeff;
+        }
 
         .circle {
             position: absolute;
@@ -173,7 +193,7 @@
         /* Hide all steps by default: */
         .tab {
             display: none;
-            
+
         }
 
         /* Make circles that indicate the steps of the form: */
@@ -197,30 +217,69 @@
         .step.finish {
             background-color: #04AA6D;
         }
-        
+
+        .background {
+            width: 430px;
+            height: 520px;
+            position: absolute;
+            transform: translate(-50%, -50%);
+            left: 50%;
+            top: 50%;
+        }
+
+        .background .shape {
+            height: 200px;
+            width: 200px;
+            position: absolute;
+            border-radius: 50%;
+        }
+
+        .shape:first-child {
+            background: linear-gradient(to right,
+                    #ff512f,
+                    #f09819);
+            left: -380px;
+            top: -80px;
+        }
+
+        .shape:last-child {
+            background: linear-gradient(#fbed14,
+                    #cbfd72);
+            right: -380px;
+            bottom: -60px;
+        }
     </style>
 </head>
 
 
 <body>
     <div class="main">
+        <div class="background">
+            <div class="shape"></div>
+            <div class="shape"></div>
+        </div>
         <div class="container">
             <form id="regForm" action="">
 
-                
+
 
                 <!-- One "tab" for each step in the form: -->
                 <div class="tab">
                     <h1>Instituition Information</h1>
-                    <p><input id="institutionname" placeholder="Instituition Name" oninput="this.className = ''"><input id="institutionurl" placeholder="Instituition URL" oninput="this.className = ''"></p>
-                    <p><input id="phonenumber" type="tel" placeholder="Phone Number" oninput="this.className = ''"><input id="institutionemail" placeholder="Instituition e-mail" oninput="this.className = ''"></p>                    
-                    <p><input placeholder="Enter Your Board" oninput="this.className = ''"></p>
+                    <p><input id="institutionname" placeholder="Instituition Name" oninput="this.className = ''"><input
+                            id="institutionurl" placeholder="Instituition URL" oninput="this.className = ''"></p>        
+                    <p><input id="phonenumber" type="tel" maxlength="10" minlength="10" placeholder="Phone Number"
+                            oninput="this.className = ''"><input type="email" id="institutionemail" placeholder="Instituition e-mail"
+                            oninput="this.className = ''"></p>
+                    <p><input id="board" placeholder="Enter Your Board" oninput="this.className = ''"
+                            style="font-family: 'Poppins',sans-serif;"></p>
                 </div>
-                
-                
+
+
                 <div class="tab">
                     <h1>Location</h1>
-                    <p><input id="address" placeholder="Instituition Address" oninput="this.className = ''"></p>
+                    <p><input id="address" placeholder="Instituition Address" oninput="this.className = ''"
+                            style="font-family: 'Poppins',sans-serif;"></p>
                     <p>
                         <select name="Select Country" id="country">
                             <option>Select Country</option>
@@ -235,30 +294,34 @@
                 </div>
 
                 <div class="tab">
-                        <label style="font-family:system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;"> Connect witrh our Social media</label>
-                        <br>
-                        <a href="link address"><img src="images/whatsapp-symbol-logo-svgrepo-com.svg.svg" width="80" height="75" style="margin-left: 80px; margin-top: 70px;">
-                        <a href="link adress"><img src="images/facebook-3-logo-svgrepo-com.svg.svg" width="80" height="75" style="margin-left: 48px;">
-                        <br>
-                        <img src="images/linkedin-icon-2-logo-svgrepo-com.svg.svg" width="80" height="75" style="margin-left: 80px; margin-top: 50px;">
-                        <img src="images/twitter-3-logo-svgrepo-com.svg.svg" width="80" height="75" style="margin-left: 48px;"><br></a>
+                    <h1 style="font-family:'Poppins', sans-serif; letter-spacing: 0.5px;">Connect with our Social media
+                    </h1>
+                    <a href="link address"><img src="images/whatsapp-symbol-logo-svgrepo-com.svg.svg" width="80"
+                            height="75" style="margin-left: 80px; margin-top: 70px;padding-left: 0;">
+                        <a href="link adress"><img src="images/facebook-3-logo-svgrepo-com.svg.svg" width="80"
+                                height="75" style="margin-left: 48px;">
+                            <img src="images/linkedin-icon-2-logo-svgrepo-com.svg.svg" width="80" height="75"
+                                style="margin-left: 80px; margin-top: 50px;">
+                            <img src="images/twitter-3-logo-svgrepo-com.svg.svg" width="80" height="75"
+                                style="margin-left: 48px;"><br></a>
                         <br>
                         <br>
                 </div>
 
                 <div class="tab">
                     <div class="text">
-                        <h2>INSTITUITION LOGO</h2>
-                        <p>Upload your Institution logo</p>
+                        <h1>Institution Logo</h1>
+                        <h2 style="font-family: 'Poppins',sans-serif;letter-spacing: 0.5px;">Upload your Institution
+                            logo</h2>
                     </div>
                     <div class="break">
-                    <div class="files">
-                        <label for="image" style="font-family:system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif">Choose Your Logo
-                           <br>
-                            <input type="file" id="logo" name="img" accept="image/*" style="padding:20px;">
-                          </label>
-                          
-                    </div>
+                        <div class="files">
+                            <label for="image" style="font-family:'Poppins', sans-serif">Choose Your Logo
+                                <br>
+                                <input type="file" id="logo" name="img" accept="image/*" style="padding:20px;">
+                            </label>
+
+                        </div>
                     </div>
                 </div>
 
@@ -267,15 +330,15 @@
                         <button type="button" id="prevBtn" onclick="nextPrev(-1)">Previous</button>
                         <button type="button" id="nextBtn" onclick="nextPrev(1)">Next</button>
                         <button id="preview">Preview</button>
-                        
-                    
+
+
                     </div>
                 </div>
 
-                
+
             </form>
             <!-- Circles which indicates the steps of the form: -->
-            <div style="text-align:center;" >
+            <div style="text-align:center;">
                 <span class="step"></span>
                 <span class="step"></span>
                 <span class="step"></span>
@@ -295,36 +358,36 @@
         const city = document.getElementById('city');
         const country = document.getElementById('country');
 
-        form.addEventListener('submit',function(e){
+        form.addEventListener('submit', function (e) {
 
             e.preventDefault();
 
-          const nameValue = institutionName.value;
-          const urlValue = institutionUrl.value;
-          const emailValue = institutionEmail.value;
-          const phonenumberValue = phoneNumber.value;
-          const addressValue = address.value;
-          const cityValue = city.value;
-          const countryValue = country.value;
+            const nameValue = institutionName.value;
+            const urlValue = institutionUrl.value;
+            const emailValue = institutionEmail.value;
+            const phonenumberValue = phoneNumber.value;
+            const addressValue = address.value;
+            const cityValue = city.value;
+            const countryValue = country.value;
 
-          localStorage.setItem('institution-name',nameValue);
-          localStorage.setItem('institution-url',urlValue);
-          localStorage.setItem('institution-email',emailValue);
-          localStorage.setItem('phone-number',phonenumberValue);
-          localStorage.setItem('institution-address',addressValue);
-          localStorage.setItem('institution-city',cityValue);
-          localStorage.setItem('institution-country',countryValue);
+            localStorage.setItem('institution-name', nameValue);
+            localStorage.setItem('institution-url', urlValue);
+            localStorage.setItem('institution-email', emailValue);
+            localStorage.setItem('phone-number', phonenumberValue);
+            localStorage.setItem('institution-address', addressValue);
+            localStorage.setItem('institution-city', cityValue);
+            localStorage.setItem('institution-country', countryValue);
 
 
             window.location.href = "preview.html";
         })
-        logo.addEventListener('change',() => {
+        logo.addEventListener('change', () => {
             const fr = new FileReader();
 
             fr.readAsDataURL(logo.files[0]);
-            fr.addEventListener('load',() => {
+            fr.addEventListener('load', () => {
                 const url = fr.result;
-                localStorage.setItem('institution-logo',url);
+                localStorage.setItem('institution-logo', url);
 
             })
         })
@@ -347,11 +410,11 @@
                 submitbutton.id = 'submitBtn';
                 submitbutton.type = 'submit'
                 submitbutton = document.getElementById('Btn');
-                
+
             } else {
                 document.getElementById("nextBtn").innerHTML = "Next";
             }
-        
+
             // ... and run a function that displays the correct step indicator:
             fixStepIndicator(n)
         }
@@ -405,7 +468,7 @@
             //... and adds the "active" class to the current step:
             x[n].className += " active";
         }
-        
+
     </script>
 </body>
 
