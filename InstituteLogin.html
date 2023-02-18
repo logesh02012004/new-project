@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Institute LogIn</title>
+    <title>Institute Register</title>
 
     <style>
         html {
@@ -405,11 +405,7 @@
                 document.getElementById("prevBtn").style.display = "inline";
             }
             if (n == (x.length - 1)) {
-                document.getElementById("nextBtn").innerHTML = "Submit";
-                var submitbutton = document.createElement('button');
-                submitbutton.id = 'submitBtn';
-                submitbutton.type = 'submit'
-                submitbutton = document.getElementById('Btn');
+                document.getElementById("nextBtn").style.display = "none";
 
             } else {
                 document.getElementById("nextBtn").innerHTML = "Next";
