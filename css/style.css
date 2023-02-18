@@ -524,7 +524,8 @@ ul.email li img {
 
 .footer {
      background: #cbfd72;
-     padding-top: 42px
+     padding-top: 20px;
+     padding-bottom: -200px;
 }
 
 ul.social_icon {
