@@ -62,7 +62,7 @@
             width: 100px;
             height: 45px;
             background-color: #0b65ffc3;
-            color: #080710;
+            color: #D5F3FE;
             font-size: 18px;
             font-weight: 600;
             border-radius: 5px;
@@ -248,6 +248,15 @@
             right: -380px;
             bottom: -60px;
         }
+        #btn{
+            padding-left: 775px;
+            margin-top: -40px;
+            
+        }
+        #nextBtn{
+
+            margin-top: 40px;
+        }
     </style>
 </head>
 
@@ -329,7 +338,10 @@
                     <div style="float:left; margin: 20px;">
                         <button type="button" id="prevBtn" onclick="nextPrev(-1)">Previous</button>
                         <button type="button" id="nextBtn" onclick="nextPrev(1)">Next</button>
-                        <button id="preview">Preview</button>
+                        <div id="btn">
+                            <button id="preview">Preview</button>
+
+                        </div>
 
 
                     </div>
